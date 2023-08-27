@@ -16,3 +16,44 @@ postpone, and one which we intend to win, and the others, too.
 first_name = "Billy"
 last_name = "Bob"
 print(f'Your name is {first_name} {last_name}')
+
+shopping_list = ['bread', 'milk', 'eggs']
+print(',..'.join(shopping_list))
+
+print('{:,}'.format(1234567890))
+
+import datetime
+
+d = datetime.datetime(2020, 7, 4, 12, 15, 58)
+print('{:%Y-%m-%d %H:%M:%S}'.format(d))
+
+width = 8
+print(' decimal         hex     binary')
+print('-'*27)
+for num in range(1,16):
+    for base in 'dxb':
+        print('{0:{width}{base}}'.format(num, base=base, width=width), end=' ')
+    print()
+
+# a = "abcd"
+# a[0] = "z"
+# print(a)
+# Traceback (most recent call last):
+#   File "sample.py", line 39, in <module>
+#     a[0] = "z"
+# TypeError: 'str' object does not support item assignment
+
+def last_three(a, b):
+    return a[-3:].lower() == b.lower()
+
+print(last_three("Power", "wer"))
+print(last_three("Application", "App"))
+
+
+def is_palindrome(a):
+    return a[::-1] == a
+
+print()
+print(is_palindrome("kayak"))
+print(is_palindrome("app"))
+print(is_palindrome("valid"))
