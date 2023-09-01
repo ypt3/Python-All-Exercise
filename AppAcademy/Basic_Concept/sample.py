@@ -57,3 +57,26 @@ print()
 print(is_palindrome("kayak"))
 print(is_palindrome("app"))
 print(is_palindrome("valid"))
+print(7j)
+
+
+def is_prime(n, i=2):
+    if n <= 2:
+        return True if n == 2 else False
+    if n % i == 0:
+        return False
+    if n < i*i:
+        return True
+
+    return is_prime(n, i+1)
+
+
+print(is_prime(1))
+print(is_prime(2))
+print(is_prime(3))
+
+i = 1
+i += 5
+print(i)
+i **= 2
+print(i)
