@@ -80,3 +80,35 @@ i += 5
 print(i)
 i **= 2
 print(i)
+
+a = 'what'
+
+if a:
+    print(f'{a} is true')
+else:
+    print('it is false')
+
+def divisible_by_five(n):
+    '''
+    this is test
+    '''
+    if n < 0:
+        n = abs(n)
+    return n % 5 == 0
+
+
+try:
+    str = 'hello'
+    str[0] = 'm'
+    print(str)
+except TypeError as e:
+    print(e, "Not str type")
+finally:
+    print('I happen regardless of any exceptions.')
+
+try:
+    print(x)
+except NameError as e:
+    print(e, 'No such variable')
+finally:
+    print('I happen regardless of any exceptions.')

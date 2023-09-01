@@ -20,4 +20,39 @@ def validate(num):
 
 print(validate(-5))
 print(validate(2.5))
-print(validate("sijjgi"))
+# print(validate("sijjgi"))
+
+
+def prime_Number(n, i=2):
+    if n == i:
+        return True
+    elif n % i == 0:
+        return False
+    return prime_Number(n, i+1)
+
+n = 972
+if prime_Number(n):
+    print("Yes, ",n," is prime")
+else:
+    print("No,",n, "is not a prime")
+
+
+def prime_number2(n):
+    for i in range(2, 1+n//2):
+        if n % 1 == 0:
+            return False
+        return True
+
+n = 979
+if prime_number2(979):
+    print("Yes, ", n, " is prime")
+else:
+    print("No,", n, "is not a prime")
+
+nums = [2,1,2]
+
+for i in range(len(nums) -3, -1, -1):
+    if nums[i] + nums[i+1] > nums[i+2]:
+        print(nums[i] + nums[i + 1] > nums[i + 2])
+    else:
+        print(None)
