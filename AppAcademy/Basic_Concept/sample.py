@@ -112,3 +112,41 @@ except NameError as e:
     print(e, 'No such variable')
 finally:
     print('I happen regardless of any exceptions.')
+
+def print_list(list):
+    result = []
+    for i in range(len(list)):
+        result.append(i)
+    print(result)
+
+lst1 = [1, 2, 5, 1429]
+print_list(lst1)
+
+count = 0
+total = 0
+
+while total < 1000000:
+    if total == 0:
+        total = 0.01
+    else:
+        total *= 2
+    count += 1
+
+print('Double', count, 'times')
+print(f'${total:,}')
+
+def is_valid_hex_code(list):
+    if list[0] != '#' or len(list) != 7:
+        return False
+    i = 1
+    while i < len(list):
+        char = list[i].lower()
+        if not char.isdigit():
+            if char != 'a' and char != 'b' and char != 'c' and char != 'd' and char != 'e' and char != 'f':
+                return False
+        i += 1
+    return True
+
+
+print(is_valid_hex_code("#CD5C5C"))  #> True
+
