@@ -149,4 +149,3 @@ def is_valid_hex_code(list):
 
 
 print(is_valid_hex_code("#CD5C5C"))  #> True
-
