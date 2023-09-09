@@ -99,3 +99,39 @@ def char_count(a, b):
 
 print(char_count("a", "App Academy"))
 
+def vowel_count(str):
+    count = 0
+    vowel = "aeiouAEIOU"
+    i = 0
+    while i < len(str):
+        if str[i] in vowel:
+            count += 1
+        i += 1
+    return count
+
+print(vowel_count("App Academy"))
+
+def add_upper(str):
+    result = ""
+    i = 0
+    while i < len(str):
+        if str[i] == str[i].upper():
+            result += str[i]
+        i += 1
+    return result
+
+print(add_upper("ApPlE"))
+
+import re
+
+def valid_zip_code(zip):
+    pattern = "^\d{5}(?:[-\s]\d)"
+    valid = re.search(pattern, zip)
+    if valid:
+        return zip
+    else:
+        return "The zip code you entered is invalid"
+    
+zip1 = '47243'
+zip3 = '01237-1238'
+print(valid_zip_code(zip1))
