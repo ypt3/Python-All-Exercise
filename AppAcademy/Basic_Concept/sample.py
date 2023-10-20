@@ -149,3 +149,27 @@ def is_valid_hex_code(list):
 
 
 print(is_valid_hex_code("#CD5C5C"))  #> True
+
+
+
+
+def find_majority_char(s):
+    n = len(s)
+    char_count = {}
+
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    for char, count in char_count.items():
+        if count > n/2:
+            
+            return char
+    print(n//2)
+    return None
+
+
+text = "abbcccdddd"
+print(find_majority_char(text))

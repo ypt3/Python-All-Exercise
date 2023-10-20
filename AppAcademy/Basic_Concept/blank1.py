@@ -84,20 +84,64 @@ def string_multi_print(str):
 string_multi_print('hello ')(2)
 
 
-def two_sum(nums, target):
-    num_indices = {}
+# def two_sum(nums, target):
+#     num_indices = {}
 
-    for i, num in enumerate(nums):
-        complement = target - num
+#     for i, num in enumerate(nums):
+#         complement = target - num
 
-        if complement in num_indices:
-            return [num_indices[complement], i]
+#         if complement in num_indices:
+#             return [num_indices[complement], i]
         
-        num_indices[num] = i
+#         num_indices[num] = i
     
-    return []
+#     return []
 
-nums = [2, 7, 11, 15]
-target = 9
-result = two_sum(nums, target)
+# nums = [2, 7, 11, 15]
+# target = 9
+# result = two_sum(nums, target)
+# print(result)
+
+
+GUEST_LIST = {
+  "Kurt": "Germany",
+  "Julia": "France",
+  "Ito": "Japan",
+  "Katherine": "England",
+  "Sam": "Argentina"
+}
+
+for name in GUEST_LIST:
+    print(name)
+
+def greeting(name):
+    if name not in GUEST_LIST:
+        return "Please add me to guest list"
+    return f"{name} from {GUEST_LIST[name]}"
+
+print(greeting("Kurt"))   #> "Hi! I'm Kurt from Germany."
+
+
+
+def find_majority_char(s):
+    n = len(s)
+    char_count = {}
+
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    for char, count in char_count.items():
+        if count > n / 2:
+            return char
+
+    return None
+
+# Example usage:
+text = "abbcccdddd"
+result = find_majority_char(text)
 print(result)
+
+
