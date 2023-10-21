@@ -173,3 +173,148 @@ def find_majority_char(s):
 
 text = "abbcccdddd"
 print(find_majority_char(text))
+
+
+def numJewelsInStones(jewels, stones):
+    jewel_set = set(jewels)
+    count = 0
+
+    for stone in stones:
+        if stone in jewel_set:
+            count += 1
+    return count
+
+jewels = "aA"
+stones = "aAAbbbb"
+result = numJewelsInStones(jewels, stones)
+print(result)
+
+
+# a = {1, 2, 3}
+# b = {3, 4, 5}
+# print(a)
+# print(b)
+
+# print(a | b)
+# print(a & b)
+# print(a - b)
+# print(b - a)
+# print(a ^ b)
+# print(a + b)
+
+# a = set('banana')
+# b = set('scarab')
+# print(a)
+# print(b)
+
+# print(a | b)
+# print(a.union(b))
+# print(a.intersection(b))
+# print(a.symmetric_difference(b))
+# print(a.difference(b))
+# print(b.difference(a))
+
+basket = ['apple', 'banana', 'apple', 'orange', 'pear']
+print(basket)
+print(set(basket))
+
+purchasingEmails = {'bob@gmail.com', 'sam@yahoo.com', 'riley@gmail.com'}
+helpEmails = {'jo@gmail.com', 'cathy@gmail.com', 'al@gmail.com'}
+print('Users making a purchase and also calling help desk')
+print(set(purchasingEmails) & set(helpEmails))
+
+
+posts = [
+    {"title": "All about list", "tags": ("fun", "informative", "lists")},
+    {"title": "Tuple Trouble", "tags": ("fun", "tuple")},
+    {"title": "Sparking Sets", "tags": ("informative", "numbers")},
+]
+
+allTags = []
+for i in range(len(posts)):
+    print(posts[i]["tags"])
+    allTags.extend(posts[i]["tags"])
+
+print(allTags)
+allTags = list(set(allTags))
+allTags.sort()
+print(allTags)
+
+
+lst = [1, 2, 3, 4, 5]
+set_of_lst = set(lst)
+
+st = set()
+st.update(lst)
+print(st)
+
+def add_to_set(st, lst):
+    return st | set(lst)
+
+st = {1, 2, 3, 4}
+lst = [12, 4, 42, 93, 2, 85]
+print(add_to_set(st, lst))
+
+
+def left_diff(set1, set2):
+    return set1 - set2
+
+set1 = {1, 2, 5, 10}
+set2 = {2, 6, 10, 12}
+
+print(left_diff(set1, set2))
+
+
+def remove_repeats(str1, str2):
+    str1 = set(str1)
+    str2 = set(str2)
+    return str1 ^ str2
+
+str1 = 'aloha'
+str2 = 'bonjour'
+
+print(remove_repeats(str1, str2))
+
+def check_binary(str1):
+    str_set = set(str1)
+    return str_set == {'0', '1'} or str_set == {'1'} or str_set == {'0'}
+
+str1 = '1010001010010100101'
+str2 = '1010010015010101010'
+
+print(check_binary(str1))       # True
+print(check_binary(str2))       # False
+
+
+def findJudge(n, trust):
+    trust_count = [0] * (n+1)
+
+    for a, b in trust:
+        trust_count[a] -= 1
+        trust_count[b] += 1
+
+    for i in range(1, n + 1):
+        if trust_count[i] == n - 1:
+            return i
+    
+    return -1
+
+n = 4
+trust = [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]
+result = findJudge(n, trust)
+print(result)
+
+
+users = [
+        {'id':123344, 'displayName':'Joe Smith', 'email':'joe.smith@gmail.com'},
+        {'id':123222, 'displayName':'Ben Smith', 'email':'ben.smith@gmail.com'},
+        {'id':333333, 'displayName':'Allen Smith', 'email':'allen.smith@gmail.com'},
+    ]
+
+# print(users)
+
+def sorter(user):
+    return user['displayName'].lower()
+
+users.sort(key=sorter)
+print(users)

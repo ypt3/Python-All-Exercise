@@ -84,23 +84,23 @@ def string_multi_print(str):
 string_multi_print('hello ')(2)
 
 
-# def two_sum(nums, target):
-#     num_indices = {}
+def two_sum(nums, target):
+    num_indices = {}
 
-#     for i, num in enumerate(nums):
-#         complement = target - num
+    for i, num in enumerate(nums):
+        complement = target - num
 
-#         if complement in num_indices:
-#             return [num_indices[complement], i]
+        if complement in num_indices:
+            return [num_indices[complement], i]
         
-#         num_indices[num] = i
+        num_indices[num] = i
     
-#     return []
+    return []
 
-# nums = [2, 7, 11, 15]
-# target = 9
-# result = two_sum(nums, target)
-# print(result)
+nums = [2, 7, 11, 15]
+target = 9
+result = two_sum(nums, target)
+print(result)
 
 
 GUEST_LIST = {
