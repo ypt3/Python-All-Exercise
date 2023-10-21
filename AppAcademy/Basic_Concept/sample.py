@@ -317,4 +317,55 @@ def sorter(user):
     return user['displayName'].lower()
 
 users.sort(key=sorter)
-print(users)
+# print(users)
+
+reverseUsers = sorted(users, key=sorter, reverse=True)
+print(reverseUsers)
+
+print('all cases: any items is false')
+title1 = ['Mr', 'Mrs', 'Ms']
+title2 = ['Mr', 'Mrs', 'Ms', '']
+title3 =[]
+print(all(title1))
+print(all(title2))
+print(all(title3))
+
+print('any case: any item is true')
+feedback1 = ['', '', '', '']
+feedback2 = ['so much fun!', '', '', '']
+feedback3 = []
+
+print(any(feedback1))
+print(any(feedback2))
+print(any(feedback3))
+
+
+scores = [90, 86, 91, 62, 99, 88, 90]
+print(scores)
+
+def isA(num):
+    return num >= 90
+
+aScore = filter(isA, scores)
+print(aScore)
+print(list(aScore))
+
+def getGrade(num):
+    if num >= 90:
+        return 'A'
+    elif num <= 90 and num >= 80:
+        return 'B'
+    elif num <= 80 and num >= 70:
+        return 'C'
+    elif num <= 70 and num >= 60:
+        return 'D'
+    else:
+        return 'F'
+    
+grades = list(map(getGrade, scores))
+# print(grades)
+
+print('ZIPPED GRADED AND SCORES')
+combined = list(zip(scores, grades))
+print(combined)
+
