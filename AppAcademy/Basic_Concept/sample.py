@@ -369,3 +369,282 @@ print('ZIPPED GRADED AND SCORES')
 combined = list(zip(scores, grades))
 print(combined)
 
+def cat_verify(cat_list):
+    same_breed = all(cat['breed'] == cat_list[0]['breed'] for cat in cat_list)
+
+    # up_for_adoption = any(not cat['adopted'] for cat in cat_list)
+    up_for_adoption = any(map(lambda cat: cat['adopted'] == False, cat_list))
+
+    return same_breed, up_for_adoption 
+
+cat_list = [
+    {
+        "name": "Lenny",
+        "breed": "Ragdoll",
+        "adopted": False
+    },
+    {
+        "name": "Roger",
+        "breed": "Siamese",
+        "adopted": False
+    },
+    {
+        "name": "Katya",
+        "breed": "Persian",
+        "adopted": True
+    }
+]
+
+result = cat_verify(cat_list)
+print(result)
+
+
+cards = [
+    {
+        "company": "Wells Fargo",
+        "card_name": "Active Cash",
+        "annual_fee": 0,
+        "intro_reward_type": "cash",
+        "intro_reward_amount": 200,
+        "num_users": 20
+    },
+    {
+        "company": "Chase",
+        "card_name": "Sapphire Preferred",
+        "annual_fee": 95,
+        "intro_reward_type": "points",
+        "intro_reward_amount": 60000,
+        "num_users": 54
+    },
+    {
+        "company": "Citi",
+        "card_name": "Diamond Preferred",
+        "annual_fee": 0,
+        "intro_reward_type": "cash",
+        "intro_reward_amount": 150,
+        "num_users": 13
+    }
+]
+
+def sorter(card):
+    return card['num_users']
+
+def sort_cards(card_list):
+    return sorted(card_list, key=sorter, reverse=True)
+
+print(sort_cards(cards))
+
+
+def sorter(teacher):
+    return teacher['classroom']['capacity']
+
+def sort_teachers_by_classroom_capacity(teachers):
+    teachers = sorted(teachers, key=sorter)
+    return list(map(lambda teacher: teacher['name'], teachers))
+
+
+teachers = [
+    {
+        "name": "Emily Richardson",
+        "subjects": ["Geometry", "Geometry Honors"],
+        "years_active": 5,
+        "classroom": {
+            "building_id": "A",
+            "room_number": 12,
+            "capacity": 45
+        }
+    },
+    {
+        "name": "Richard Emilyson",
+        "subjects": ["English 11", "AP English Language"],
+        "years_active": 12,
+        "classroom": {
+            "building_id": "J",
+            "room_number": 42,
+            "capacity": 60
+        }
+    },
+    {
+        "name": "Richly Emiardson",
+        "subjects": ["Chemistry", "Chemistry Honors", "AP Chemistry"],
+        "years_active": 8,
+        "classroom": {
+            "building_id": "C",
+            "room_number": 5,
+            "capacity": 32
+        }
+    },
+]
+
+print(sort_teachers_by_classroom_capacity(teachers))
+
+
+
+phones = [
+    {
+        "brand": "Apple",
+        "model": "iPhone 13 Pro",
+        "cost": 929,
+        "color": "alpine green"
+    },
+    {
+        "brand": "Samsung",
+        "model": "Galaxy S22+",
+        "cost": 999,
+        "color": "black"
+    },
+    {
+        "brand": "Google",
+        "model": "Pixel 6",
+        "cost": 599,
+        "color": "kinda coral"
+    },
+    {
+        "brand": "Apple",
+        "model": "iPhone 13 Pro",
+        "cost": 929,
+        "color": "gold"
+    },
+    {
+        "brand": "Google",
+        "model": "Pixel 6",
+        "cost": 599,
+        "color": "stormy black"
+    }
+]
+
+def get_unique_models(phone_list):
+    model = []
+    return filter(lambda phone: model.append(phone['model']) is None if phone['model'] not in model else False, phone_list)
+
+def map_to_names(phone_list):
+    return list(map(lambda phone: phone['model'], phone_list))
+
+unique_models = get_unique_models(phones)
+model_names = map_to_names(unique_models)
+
+print(list(model_names))  # ['iPhone 13 Pro', 'Galaxy S22+']
+
+
+# squares = map(lambda x: x**2, range(10))
+# print(squares)
+# print(list(squares))
+
+squares = [i**2 for i in range(10)]
+print(squares)
+# print(list(squares))
+
+lst = [1,2,'string',True,None]
+new = [i for i in lst]
+print(new)
+
+keys = ['age', 'name', 'height']
+values = [32, 'Corina', 1.4]
+
+# d = {keys[i].title(): values[i] for i in range(len(keys))}
+d = { key: value for key, value in zip(keys, values)}
+print(d)
+
+# teller = []
+# teller.append("Great Customer")
+# print(teller)
+# teller.pop()
+# print(teller)
+# teller.append("Process deposit")
+# print(teller)
+# teller.append("Phone Ring")
+# print(teller)
+# teller.pop()
+# teller.append("Greet Caller, Anser question")
+# print(teller)
+# teller.pop()
+# print(teller)
+# teller.pop()
+# print(teller)
+
+
+processor = []
+processor.append({"type": "path", "path":"", "header":[], "cookies":[]})
+processor.append({"type": "api", "function":"", "parameters":[]})
+processor.append({"type": "email", "address":"ji@yahoo.com", "subject":""})
+print("processor", processor)
+
+for i in range(len(processor)):
+    item = processor.pop(0)
+    print("PROCESSING ITEM", item)
+    print("Reaming", processor)
+
+
+
+# class StrNumeric:
+#     def __init__(self, value):
+#         if not isinstance(value, str) or not value.isnumeric():
+#             raise Exception("String value can have only numeric characters.")
+            
+#         self.val = value
+#     def __add__(self, thing_2):
+#         return int(self.val) + int(thing_2)
+
+
+# str_1 = StrNumeric("1")
+# print(str_1 + 2) # 3
+
+# str_44 = StrNumeric("44")
+# print(str_44 + 6) # 50
+
+
+class LinkedListIterator:
+    def __init__(self, head) -> None:
+        self._current = head 
+
+    def __iter__(self):
+        return self 
+    
+    def __next__(self):
+        if not self._current:
+            raise StopIteration
+        else: 
+            value = self._current._value
+            self._current = self._current._next
+            return value
+
+class Node: 
+    def __init__(self, value) -> None:
+        self._value = value 
+        self._next = None 
+    
+
+class LinkedList: 
+    def __init__(self) -> None:
+        self._head = None 
+        self._tail = None 
+        self._length = 0
+    
+    def __iter__(self):
+        return LinkedListIterator(self._head)
+    
+
+    def add(self, value):
+        new_node = Node(value)
+
+        if self._head is None: 
+            self._head = new_node
+        else: 
+            self._tail._next = new_node
+        
+        self._tail = new_node
+        self._length += 1
+        return self 
+
+
+linked_list = LinkedList()
+linked_list.add('node 1')
+linked_list.add('node 2')
+linked_list.add('node 3')
+linked_list.add('node 4')
+linked_list.add('node 5')
+
+# this loop should print "Current node: node x" five times 
+# for each node in the linked list
+for i in linked_list:
+    print(f"Current node: {i}")
