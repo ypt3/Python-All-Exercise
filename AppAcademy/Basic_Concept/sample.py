@@ -648,3 +648,4 @@ linked_list.add('node 5')
 # for each node in the linked list
 for i in linked_list:
     print(f"Current node: {i}")
+
